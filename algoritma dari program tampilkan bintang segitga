@@ -1,0 +1,50 @@
+uses crt;
+var x,y,z :integer;
+begin
+clrscr;
+write('masukkan jumlah bintang nya = ');readln(z);
+if (z>=3) then
+for x:=1 to z do
+begin
+for y:=1 to z-x do
+begin
+write (' ');
+end;
+for y:=x downto 1 do
+begin
+write('* ');
+end;
+writeln;
+end
+else
+write('masukkan jumlah bintang nya lebih dari 2 dan restart program ');
+readkey;
+end.
+
+
+Algoritma dari program di atas
+untuk baris ke 5, z sebagai nilai inputan
+baris ke 6 terjadi pengechekan nilai, jika inputan (nilai z dibawah nilai 3), maka step program akan loncat ke baris 20
+tapi jika nilai inputan z lebih atau sama dengan 3 maka akan lanjut ke step 7,step by step ,sampai step 18.
+dari step 7 sampai step 18 terjadi 3 pengulangan
+baris 7 pengulangan paling luar 
+baris 9 pengulangan tengah
+baris 13 pengulangan paling dalam,untuk pengulangan kolom juga di dalam baris yang sama setelah pengulangan baris 9 selesai
+kita ambil contoh jika z = 5
+pengulangan ketika x:=1 to 5 (x berarti baris) ,berarti baris ke satu dari 5 baris. maka 
+di baris ke satu akan terjadi pengulangan y:=1 to 5-1, berarti akan ada pengulangan intruksi(baris 11 / cetak(' ')) sebanyak 4 kali-
+yaitu y=1 cetak satu spasi, y=2 cetak satu spasi,y=3 cetak satu spasi, y=4 cetak satu spasi-
+ (y berarti kolom).
+setelah pengulangan terpenuhi lanjut ke 
+pengulangan y:=x downto 1, berarti ketika nilai x = 1 berarti akan terjadi pengulangan sebanyak 1 kali-
+instruksi (baris 15) atau cetak (`* ')
+maka 
+untuk baris ke dua akan ada pengulangan 3 kali cetak(' ')/spasi dan pengulangan 2 kali cetak ('* ')
+untuk baris ke tiga akan ada pengulangan 2 kali cetak(' ')/spasi dan pengulangan 3 kali cetak ('* ')
+untuk baris ke empat akan ada pengulangan 1 kali cetak(' ')/spasi dan pengulangan 4 kali cetak ('* ')
+untuk baris ke lima tidak akan ada pengulangan cetak(' ')/spasi karena ketika x=5 berarti z-x atau 5-5 =0
+dan pengulangan 5 kali cetak ('* ')
+
+maka baris 7 pengulangan untuk baris
+baris 9 pengulangan untuk kolom dan cetak spasi (' ')
+baris 13 pengulangan untuk kolom dan cetak binatang ('* ')
